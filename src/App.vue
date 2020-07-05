@@ -69,7 +69,7 @@ export default {
     getAllItems() {
       this.items = [];
       for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) != "loglevel:webpack-dev-server") {
+        if (localStorage.key(i).includes('cap')) {
           this.items.push(
             JSON.parse(localStorage.getItem(localStorage.key(i)))
           );
