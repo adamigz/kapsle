@@ -29,9 +29,9 @@
           <CapEdit @close="showEditComponent()" :item="edditableItem" @edit="getAllItems()" />
         </b-row>
       </transition>
-      <b-container fluid v-for="array in items">
+      <b-container fluid v-for="(array , index) in items" :key="index">
         <b-row>
-            <Cap :item="item" class="m-auto" @refresh="getAllItems()" @edit="showEditComponent" v-for="item in array"/>
+            <Cap :item="item" class="m-auto" @refresh="getAllItems()" @edit="showEditComponent"  v-for="(item, index) in array" :key="index"/>
         </b-row>
       </b-container>
     </b-container>
